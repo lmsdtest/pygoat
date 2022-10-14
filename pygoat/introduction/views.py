@@ -641,7 +641,7 @@ def insec_desgine_lab(request):
                     all_tickets = tickits.objects.all()
                     sold_tickets = len(all_tickets)
                     if sold_tickets <60:
-                        return render(request,"Lab/A11/a11_lab.html", {"error": "Invalid tickit","tickets":Tickets,"error":f"Wait until all tickets are sold ({60-sold_tickets} tickets left)"})
+                        return render(request,"Lab/A11/a11_lab.html", {"tickets":Tickets,"error":f"Wait until all tickets are sold ({60-sold_tickets} tickets left)"})
                     else:
                         if tickit in Tickets:
                             return render(request,"Lab/A11/a11_lab.html", {"error": "Congratulation,You figured out the flaw in Design.<br> A better authentication should be used in case for checking the uniqueness of a user.","tickets":Tickets})
